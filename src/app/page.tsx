@@ -90,11 +90,11 @@ export default function HomePage() {
           title="Selected Projects and Objects"
           description="A cross-section of games, product platforms, films, and physical goods from the Yuxion ecosystem."
         />
-        <div className="mx-auto mt-8 grid w-full max-w-[1200px] place-items-center gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto mt-8 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 max-w-[24rem] sm:max-w-[49.25rem] xl:max-w-[74.5rem]">
           {featured.map((item) => (
             <Card
               key={item.title}
-              className="group w-[95%] overflow-hidden transition-colors hover:border-cyan-400/50"
+              className="group w-full overflow-hidden transition-colors hover:border-cyan-400/50"
             >
               <Link href={item.href}>
                 <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
