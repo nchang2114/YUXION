@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 35% 98%;
+  --foreground: 220 18% 11%;
+  --card: 0 0% 100%;
+  --muted: 212 30% 94%;
+  --muted-foreground: 220 10% 40%;
+  --border: 214 22% 86%;
+  --accent: 188 100% 53%;
+  --accent-foreground: 220 18% 10%;
+}
+
+.dark {
+  --background: 220 30% 7%;
+  --foreground: 210 16% 95%;
+  --card: 224 26% 10%;
+  --muted: 220 20% 15%;
+  --muted-foreground: 214 10% 68%;
+  --border: 218 18% 22%;
+  --accent: 188 100% 56%;
+  --accent-foreground: 220 20% 8%;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: var(--font-sans), sans-serif;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.12), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(15, 23, 42, 0.08), transparent 24%);
+}
+
+.dark body {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.12), transparent 25%),
+    radial-gradient(circle at 88% 8%, rgba(7, 89, 133, 0.2), transparent 30%);
+}
+
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.container-pad {
+  @apply w-full px-6 md:px-8 lg:px-10;
+}
+
+.grid-bg {
+  @apply bg-grid-light dark:bg-grid-dark bg-grid;
+}
+
+input,
+textarea,
+select {
+  @apply rounded-xl border border-border bg-card px-3 py-2 text-sm outline-none transition-colors;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply border-cyan-400;
+}
