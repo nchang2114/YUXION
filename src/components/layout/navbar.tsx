@@ -68,7 +68,7 @@ export function Navbar() {
   return (
     <header
       ref={navRef}
-      className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md"
+      className="sticky top-0 z-40 border-b border-border/70 bg-background"
     >
       <div className="flex h-16 w-full items-center justify-between px-6 md:px-8 lg:px-10">
         <Link href="/" className="font-display text-2xl tracking-tight">
@@ -173,7 +173,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "w-screen border-t border-border pb-5 pt-3 md:hidden",
+          "absolute inset-x-0 top-full z-50 border-y border-border bg-background pb-5 pt-3 shadow-lg md:hidden",
           open ? "block" : "hidden",
         )}
         aria-hidden={!open}
