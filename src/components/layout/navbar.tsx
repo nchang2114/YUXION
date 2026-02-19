@@ -159,7 +159,7 @@ export function Navbar() {
         )}
         aria-hidden={!open}
       >
-          <nav aria-label="Mobile navigation" className="grid w-full gap-1">
+        <nav aria-label="Mobile navigation" className="grid w-full gap-1">
           {navItems.map((item) => {
             const active = isActive(item.href);
             return (
@@ -168,9 +168,9 @@ export function Navbar() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                    "relative block w-full rounded-none px-6 py-2 text-sm uppercase text-zinc-900 hover:bg-foreground/5 hover:text-zinc-900",
-                    active &&
-                      "bg-foreground/8 text-zinc-900 before:absolute before:left-3 before:top-1/2 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-none before:bg-cyan-400",
+                  "relative block w-full rounded-none px-6 py-2.5 text-base font-semibold uppercase tracking-[0.02em] text-foreground/85 transition-colors hover:bg-foreground/7 hover:text-foreground dark:text-foreground/90 dark:hover:bg-foreground/12",
+                  active &&
+                    "bg-foreground/10 text-foreground before:absolute before:left-3 before:top-1/2 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-none before:bg-cyan-400 dark:bg-foreground/16",
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -178,20 +178,20 @@ export function Navbar() {
               </Link>
             );
           })}
-          </nav>
-          <div className="mt-3 flex items-center justify-between gap-2 px-6">
-            <ThemeToggle />
-            <Button
-              variant="secondary"
-              className="flex-1"
-              onClick={() => {
-                openCart();
-                setOpen(false);
-              }}
-            >
-              Cart ({itemCount})
-            </Button>
-          </div>
+        </nav>
+        <div className="mt-3 flex items-center justify-between gap-2 px-6">
+          <ThemeToggle />
+          <Button
+            variant="secondary"
+            className="flex-1"
+            onClick={() => {
+              openCart();
+              setOpen(false);
+            }}
+          >
+            Cart ({itemCount})
+          </Button>
+        </div>
       </div>
     </header>
   );

@@ -9,23 +9,43 @@ import { Tabs } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-export function WorkFilterGrid({ items }: { items: WorkItem[] }) {
-  const [filter, setFilter] = useState<(typeof workFilters)[number]>("All");
+type WorkFilter = (typeof workFilters)[number];
+
+type WorkFilterGridProps = {
+  items: WorkItem[];
+  filter?: WorkFilter;
+  onFilterChange?: (next: WorkFilter) => void;
+};
+
+export function WorkFilterGrid({
+  items,
+  filter,
+  onFilterChange,
+}: WorkFilterGridProps) {
+  const [internalFilter, setInternalFilter] = useState<WorkFilter>("All");
+  const activeFilter = filter ?? internalFilter;
+
+  const handleFilterChange = (next: WorkFilter) => {
+    onFilterChange?.(next);
+    if (filter === undefined) {
+      setInternalFilter(next);
+    }
+  };
 
   const filtered = useMemo(
     () =>
-      filter === "All"
+      activeFilter === "All"
         ? items
-        : items.filter((item) => item.category === filter),
-    [filter, items],
+        : items.filter((item) => item.category === activeFilter),
+    [activeFilter, items],
   );
 
   return (
     <div className="space-y-6">
       <Tabs
         tabs={workFilters.map((entry) => ({ label: entry, value: entry }))}
-        value={filter}
-        onChange={(next) => setFilter(next as (typeof workFilters)[number])}
+        value={activeFilter}
+        onChange={(next) => handleFilterChange(next as WorkFilter)}
         ariaLabel="Filter work by category"
       />
 
