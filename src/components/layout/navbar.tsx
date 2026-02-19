@@ -116,10 +116,10 @@ export function Navbar() {
             {open ? (
               <motion.span
                 key="close"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.04, ease: "linear" }}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.12, ease: "easeInOut" }}
                 className="inline-flex"
               >
                 <X size={20} aria-hidden="true" />
@@ -127,10 +127,10 @@ export function Navbar() {
             ) : (
               <motion.span
                 key="open"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.04, ease: "linear" }}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.12, ease: "easeInOut" }}
                 className="inline-flex"
               >
                 <Menu size={20} aria-hidden="true" />
