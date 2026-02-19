@@ -13,7 +13,7 @@ import { useCart } from "@/components/providers/cart-provider";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
-  { href: "/studio", label: "Studio" },
+  { href: "/founder", label: "Founder" },
   { href: "/store", label: "Store" },
 ];
 
