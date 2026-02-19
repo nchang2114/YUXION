@@ -4,7 +4,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,18 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const { itemCount, openCart } = useCart();
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const isActive = (href: string) => {
     if (href === "/") {
       return pathname === "/";
@@ -142,32 +154,32 @@ export function Navbar() {
 
       <div
         className={cn(
-          "border-t border-border px-6 pb-5 pt-3 md:hidden",
+          "w-screen border-t border-border pb-5 pt-3 md:hidden",
           open ? "block" : "hidden",
         )}
         aria-hidden={!open}
       >
-          <nav aria-label="Mobile navigation" className="grid gap-1">
-            {navItems.map((item) => {
-              const active = isActive(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "relative rounded-xl px-3 py-2 text-sm text-muted-foreground hover:bg-foreground/5 hover:text-foreground",
+          <nav aria-label="Mobile navigation" className="grid w-full gap-1">
+          {navItems.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                    "relative block w-full rounded-none px-6 py-2 text-sm uppercase text-zinc-900 hover:bg-foreground/5 hover:text-zinc-900",
                     active &&
-                      "bg-foreground/8 text-foreground before:absolute before:left-1 before:top-1/2 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-full before:bg-cyan-400",
-                  )}
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+                      "bg-foreground/8 text-zinc-900 before:absolute before:left-3 before:top-1/2 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-none before:bg-cyan-400",
+                )}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           </nav>
-          <div className="mt-3 flex items-center justify-between gap-2">
+          <div className="mt-3 flex items-center justify-between gap-2 px-6">
             <ThemeToggle />
             <Button
               variant="secondary"
