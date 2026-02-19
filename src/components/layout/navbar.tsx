@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -108,11 +108,35 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-foreground transition-colors hover:bg-foreground/5 md:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-foreground transition-colors md:hidden"
           onClick={() => setOpen((prev) => !prev)}
           aria-label={open ? "Close menu" : "Open menu"}
         >
-          {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+          <AnimatePresence mode="wait" initial={false}>
+            {open ? (
+              <motion.span
+                key="close"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.04, ease: "linear" }}
+                className="inline-flex"
+              >
+                <X size={20} aria-hidden="true" />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="open"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.04, ease: "linear" }}
+                className="inline-flex"
+              >
+                <Menu size={20} aria-hidden="true" />
+              </motion.span>
+            )}
+          </AnimatePresence>
         </button>
       </div>
 
