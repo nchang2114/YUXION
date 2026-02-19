@@ -90,9 +90,12 @@ export default function HomePage() {
           title="Selected Projects and Objects"
           description="A cross-section of games, product platforms, films, and physical goods from the Yuxion ecosystem."
         />
-        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto mt-8 grid w-full max-w-[1200px] place-items-center gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featured.map((item) => (
-            <Card key={item.title} className="group overflow-hidden transition-colors hover:border-cyan-400/50">
+            <Card
+              key={item.title}
+              className="group w-[95%] overflow-hidden transition-colors hover:border-cyan-400/50"
+            >
               <Link href={item.href}>
                 <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
                   <Image
@@ -165,17 +168,17 @@ export default function HomePage() {
           title="Notes From the Studio"
           description="Process essays and practical frameworks from our teams."
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 flex flex-wrap gap-4">
           {journalPosts.slice(0, 3).map((post) => (
-            <Card key={post.slug} className="p-5">
+            <Card key={post.slug} className="w-full max-w-[300px] p-4">
               <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
                 {post.date} • {post.readTime}
               </p>
-              <h3 className="mt-3 font-display text-2xl">{post.title}</h3>
+              <h3 className="mt-2 font-display text-xl leading-tight">{post.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{post.excerpt}</p>
               <Link
                 href={`/journal/${post.slug}`}
-                className="mt-4 inline-flex items-center gap-1 text-sm text-cyan-600 hover:text-cyan-500 dark:text-cyan-400"
+                className="mt-3 inline-flex items-center gap-1 text-sm text-cyan-600 hover:text-cyan-500 dark:text-cyan-400"
               >
                 Read article <ArrowRight className="h-3.5 w-3.5" />
               </Link>
