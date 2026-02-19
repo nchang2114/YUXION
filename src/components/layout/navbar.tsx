@@ -146,6 +146,7 @@ export function Navbar() {
         >
           <motion.span
             className="pointer-events-none absolute inset-0 inline-flex items-center justify-center"
+            initial={{ opacity: 1, scale: 1, rotate: 0 }}
             animate={{ opacity: open ? 0 : 1, scale: open ? 0.82 : 1, rotate: open ? -20 : 0 }}
             transition={{ duration: 0.11, ease: [0.2, 0.9, 0.3, 1] }}
           >
@@ -153,6 +154,7 @@ export function Navbar() {
           </motion.span>
           <motion.span
             className="pointer-events-none absolute inset-0 inline-flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.82, rotate: 20 }}
             animate={{ opacity: open ? 1 : 0, scale: open ? 1 : 0.82, rotate: open ? 0 : 20 }}
             transition={{ duration: 0.11, ease: [0.2, 0.9, 0.3, 1] }}
           >
