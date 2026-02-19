@@ -140,8 +140,13 @@ export function Navbar() {
         </button>
       </div>
 
-      {open ? (
-        <div className="border-t border-border px-6 pb-5 pt-3 md:hidden">
+      <div
+        className={cn(
+          "border-t border-border px-6 pb-5 pt-3 md:hidden",
+          open ? "block" : "hidden",
+        )}
+        aria-hidden={!open}
+      >
           <nav aria-label="Mobile navigation" className="grid gap-1">
             {navItems.map((item) => {
               const active = isActive(item.href);
@@ -175,8 +180,7 @@ export function Navbar() {
               Cart ({itemCount})
             </Button>
           </div>
-        </div>
-      ) : null}
+      </div>
     </header>
   );
 }
