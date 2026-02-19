@@ -171,47 +171,53 @@ export function Navbar() {
         </button>
       </div>
 
-      <div
-        className={cn(
-          "absolute inset-x-0 top-full z-50 border-y border-border bg-background pb-5 pt-3 shadow-lg md:hidden",
-          open ? "block" : "hidden",
-        )}
-        aria-hidden={!open}
-      >
-        <nav aria-label="Mobile navigation" className="grid w-full gap-1">
-          {navItems.map((item) => {
-            const active = isActive(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "relative block w-full rounded-none px-6 py-2.5 text-base font-semibold uppercase tracking-[0.02em] text-foreground/85 transition-colors hover:bg-foreground/7 hover:text-foreground dark:text-foreground/90 dark:hover:bg-foreground/12",
-                  active &&
-                    "bg-foreground/10 text-foreground before:absolute before:left-3 before:top-1/2 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-none before:bg-cyan-400 dark:bg-foreground/16",
-                )}
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-        <div className="mt-3 flex items-center justify-between gap-2 px-6">
-          <ThemeToggle />
-          <Button
-            variant="secondary"
-            className="flex-1"
-            onClick={() => {
-              openCart();
-              setOpen(false);
-            }}
+      <AnimatePresence initial={false}>
+        {open ? (
+          <motion.div
+            key="mobile-nav-dropdown"
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            animate={{ clipPath: "inset(0 0 0% 0)" }}
+            exit={{ clipPath: "inset(0 0 100% 0)" }}
+            transition={{ duration: 0.23, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-x-0 top-full z-50 overflow-hidden border-y border-border bg-background pb-5 pt-3 shadow-lg md:hidden"
+            aria-hidden={!open}
           >
-            Cart ({itemCount})
-          </Button>
-        </div>
-      </div>
+            <nav aria-label="Mobile navigation" className="grid w-full gap-1">
+              {navItems.map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "relative block w-full rounded-none px-6 py-2.5 text-base font-semibold uppercase tracking-[0.02em] text-foreground/85 transition-colors hover:bg-foreground/7 hover:text-foreground dark:text-foreground/90 dark:hover:bg-foreground/12",
+                      active &&
+                        "bg-foreground/10 text-foreground before:absolute before:left-3 before:top-1/2 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-none before:bg-cyan-400 dark:bg-foreground/16",
+                    )}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="mt-3 flex items-center justify-between gap-2 px-6">
+              <ThemeToggle />
+              <Button
+                variant="secondary"
+                className="flex-1"
+                onClick={() => {
+                  openCart();
+                  setOpen(false);
+                }}
+              >
+                Cart ({itemCount})
+              </Button>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }
