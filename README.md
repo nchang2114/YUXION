@@ -50,22 +50,22 @@ http://localhost:3000
 
 ## Where to Edit Content
 
-- Work case studies: `content/work.ts`
-- Store products: `content/products.ts`
-- Journal posts: `content/journal.ts`
+- Work case studies: `src/content/work.ts`
+- Store products: `src/content/products.ts`
+- Journal posts: `src/content/journal.ts`
 
 ## Core UI and Layout
 
-- Global shell (navbar/footer/transitions): `components/layout/site-shell.tsx`
-- Theme + cart providers: `components/providers/site-providers.tsx`
-- Shared UI primitives: `components/ui/*`
-- Work and store filter grids: `components/work/work-filter-grid.tsx`, `components/store/store-filter-grid.tsx`
+- Global shell (navbar/footer/transitions): `src/components/layout/site-shell.tsx`
+- Theme + cart providers: `src/components/providers/site-providers.tsx`
+- Shared UI primitives: `src/components/ui/*`
+- Work and store filter grids: `src/components/work/work-filter-grid.tsx`, `src/components/store/store-filter-grid.tsx`
 
 ## Theming and Visual System
 
-- Global CSS tokens and gradients: `app/globals.css`
+- Global CSS tokens and gradients: `src/app/globals.css`
 - Tailwind design extensions: `tailwind.config.ts`
-- Theme persistence: `next-themes` via `components/providers/theme-provider.tsx`
+- Theme persistence: `next-themes` via `src/components/providers/theme-provider.tsx`
 
 ## Deployment Notes
 
