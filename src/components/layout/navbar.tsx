@@ -137,38 +137,28 @@ export function Navbar() {
           </button>
         </div>
 
-        <button
+        <motion.button
           type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-foreground transition-colors md:hidden"
+          className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-foreground transition-colors md:hidden"
           onClick={() => setOpen((prev) => !prev)}
           aria-label={open ? "Close menu" : "Open menu"}
+          whileTap={{ scale: 0.95 }}
         >
-          <AnimatePresence mode="wait" initial={false}>
-            {open ? (
-              <motion.span
-                key="close"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.12, ease: "easeInOut" }}
-                className="inline-flex"
-              >
-                <X size={20} aria-hidden="true" />
-              </motion.span>
-            ) : (
-              <motion.span
-                key="open"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.12, ease: "easeInOut" }}
-                className="inline-flex"
-              >
-                <Menu size={20} aria-hidden="true" />
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </button>
+          <motion.span
+            className="pointer-events-none absolute inset-0 inline-flex items-center justify-center"
+            animate={{ opacity: open ? 0 : 1, scale: open ? 0.82 : 1, rotate: open ? -20 : 0 }}
+            transition={{ duration: 0.11, ease: [0.2, 0.9, 0.3, 1] }}
+          >
+            <Menu size={20} aria-hidden="true" />
+          </motion.span>
+          <motion.span
+            className="pointer-events-none absolute inset-0 inline-flex items-center justify-center"
+            animate={{ opacity: open ? 1 : 0, scale: open ? 1 : 0.82, rotate: open ? 0 : 20 }}
+            transition={{ duration: 0.11, ease: [0.2, 0.9, 0.3, 1] }}
+          >
+            <X size={20} aria-hidden="true" />
+          </motion.span>
+        </motion.button>
       </div>
 
       <AnimatePresence initial={false}>
