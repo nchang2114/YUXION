@@ -2,7 +2,12 @@
   "name": "yuxion-site",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20 <24"
+  },
   "scripts": {
+    "clean": "rm -rf .next node_modules/.cache",
+    "dev:reset": "npm run clean && next dev",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
