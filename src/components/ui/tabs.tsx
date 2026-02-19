@@ -45,7 +45,7 @@ export function Tabs({ tabs, value, onChange, ariaLabel }: TabsProps) {
           aria-label={ariaLabel}
           value={value}
           onChange={(event) => onChange(event.target.value)}
-          className="w-full cursor-pointer appearance-none rounded-full border border-border bg-card px-4 py-2 pr-10 text-sm"
+          className="font-display w-full cursor-pointer appearance-none rounded-xl border border-border/80 bg-card/60 px-4 py-2.5 pr-10 text-sm tracking-[0.01em] backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           {tabs.map((tab) => (
             <option key={tab.value} value={tab.value}>
@@ -60,7 +60,7 @@ export function Tabs({ tabs, value, onChange, ariaLabel }: TabsProps) {
       </div>
 
       <div
-        className="hidden sm:inline-flex rounded-full border border-border bg-card p-1"
+        className="hidden sm:inline-flex items-center gap-1 rounded-xl border border-border/80 bg-card/60 p-1 backdrop-blur-sm"
         role="tablist"
         aria-label={ariaLabel}
       >
@@ -80,13 +80,20 @@ export function Tabs({ tabs, value, onChange, ariaLabel }: TabsProps) {
               onKeyDown={(event) => onKeyDown(event, index)}
               onClick={() => onChange(tab.value)}
               className={cn(
-                "rounded-full px-4 py-2 text-sm transition-colors",
+                "font-display relative rounded-md px-3.5 pb-2 pt-1.5 text-base tracking-[0.01em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 selected
-                  ? "bg-cyan-400 text-black"
+                  ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
-              {tab.label}
+              <span>{tab.label}</span>
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "pointer-events-none absolute bottom-1 left-2 right-2 h-0.5 origin-center rounded-full bg-current transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform",
+                  selected ? "scale-x-100" : "scale-x-0",
+                )}
+              />
             </button>
           );
         })}

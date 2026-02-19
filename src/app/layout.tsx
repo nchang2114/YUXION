@@ -13,6 +13,7 @@ const sans = Manrope({
 
 const display = EB_Garamond({
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });

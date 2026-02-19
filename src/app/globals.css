@@ -44,6 +44,7 @@ body {
 
 .font-display {
   font-family: var(--font-display), serif;
+  font-weight: 600;
 }
 
 .container-pad {

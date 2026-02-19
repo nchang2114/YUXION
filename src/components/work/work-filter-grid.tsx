@@ -51,7 +51,7 @@ export function WorkFilterGrid({ items }: { items: WorkItem[] }) {
                     <Badge>{item.category}</Badge>
                     <span className="text-xs text-muted-foreground">{item.year}</span>
                   </div>
-                  <h3 className="font-display text-2xl">{item.title}</h3>
+                  <h3 className="font-display text-2xl font-bold tracking-tight">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
               </Link>
