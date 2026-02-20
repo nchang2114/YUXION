@@ -183,8 +183,8 @@ export default function FounderPage() {
             <Link href="/work" className={buttonStyles({ size: "lg" })}>
               Explore My Work
             </Link>
-            <Link href="/journal" className={buttonStyles({ variant: "secondary", size: "lg" })}>
-              Follow the Journey <ArrowRight className="ml-1 h-4 w-4" />
+            <Link href="/support" className={buttonStyles({ variant: "secondary", size: "lg" })}>
+              Start Here <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
         </div>

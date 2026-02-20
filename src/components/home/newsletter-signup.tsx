@@ -35,7 +35,7 @@ export function NewsletterSignup() {
           required
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          placeholder="you@studio.com"
+          placeholder="you@yuxion.com"
           className="sm:flex-1"
         />
         <Button type="submit">Subscribe</Button>

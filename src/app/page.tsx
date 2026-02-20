@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { NewsletterSignup } from "@/components/home/newsletter-signup";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { journalPosts } from "@/content/journal";
 import { products } from "@/content/products";
 import { workItems } from "@/content/work";
 
@@ -160,31 +158,6 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section className="container-pad mt-20">
-        <SectionHeading
-          eyebrow="Journal"
-          title="Notes From the Studio"
-          description="Process essays and practical frameworks from our teams."
-        />
-        <div className="mt-8 flex flex-wrap gap-4">
-          {journalPosts.slice(0, 3).map((post) => (
-            <Card key={post.slug} className="w-full max-w-[300px] p-4">
-              <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                {post.date} • {post.readTime}
-              </p>
-              <h3 className="mt-2 font-display text-xl leading-tight">{post.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{post.excerpt}</p>
-              <Link
-                href={`/journal/${post.slug}`}
-                className="mt-3 inline-flex items-center gap-1 text-sm text-cyan-600 hover:text-cyan-500 dark:text-cyan-400"
-              >
-                Read article <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </Card>
-          ))}
-        </div>
       </section>
 
       <section className="container-pad mb-20 mt-20">

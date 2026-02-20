@@ -2,17 +2,17 @@ import { Accordion } from "@/components/ui/accordion";
 
 export default function FaqPage() {
   return (
-    <section className="container-pad py-16">
-      <h1 className="font-display text-5xl">FAQ&apos;s</h1>
-      <p className="mt-3 max-w-2xl text-muted-foreground">
+    <section className="container-pad py-14 md:py-20">
+      <h1 className="font-display text-5xl leading-none tracking-tight sm:text-6xl">FAQs</h1>
+      <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
         Common questions about Yuxion services, products, and fulfillment.
       </p>
-      <div className="mt-8 max-w-3xl">
+      <div className="mt-10 max-w-5xl">
         <Accordion
           items={[
             {
               id: "lead-time",
-              title: "What is the typical timeline for studio engagements?",
+              title: "What is the typical timeline for founder engagements?",
               content:
                 "Most engagements run 8-16 weeks depending on complexity and production scope.",
             },

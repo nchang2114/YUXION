@@ -15,8 +15,8 @@ export default function SupportPage() {
 
   const applyExampleFill = () => {
     setForm({
-      name: "Alex Morgan",
-      email: "alex@northshore.design",
+      name: "Jane Doe",
+      email: "jane.doe@example.com",
       subject: "Order #YX-2048 shipping update",
       message:
         "Hi YUXION support, I placed order #YX-2048 for the Frame Lounge Chair last week and wanted to confirm the estimated ship window and tracking handoff details. Thanks.",
@@ -51,7 +51,7 @@ export default function SupportPage() {
               id="support-name"
               className="mt-1 w-full"
               required
-              placeholder="Alex Morgan"
+              placeholder="Jane Doe"
               value={form.name}
               onChange={(event) =>
                 setForm((current) => ({ ...current, name: event.target.value }))
@@ -65,7 +65,7 @@ export default function SupportPage() {
               className="mt-1 w-full"
               type="email"
               required
-              placeholder="alex@northshore.design"
+              placeholder="jane.doe@example.com"
               value={form.email}
               onChange={(event) =>
                 setForm((current) => ({ ...current, email: event.target.value }))
