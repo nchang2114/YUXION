@@ -5,13 +5,18 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-const mediums = ["Apps.", "Games.", "Film.", "Music.", "Physical design."];
+const mediums = [
+  "I build apps.",
+  "I design systems.",
+  "I make films.",
+  "I create music.",
+  "I design physical objects.",
+];
 const priorities = [
   "The people I love.",
   "The responsibility I carry.",
-  "The quiet seasons.",
-  "Rest.",
-  "Presence.",
+  "The seasons of rest.",
+  "The simple joy of being alive.",
 ];
 
 export default function FounderPage() {
@@ -30,12 +35,16 @@ export default function FounderPage() {
           <div className="max-w-4xl space-y-6">
             <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Founder</p>
             <h1 className="font-display text-5xl leading-[0.92] tracking-tight text-white sm:text-6xl md:text-7xl">
-              I build intentionally.
+              Change is possible.
             </h1>
             <p className="max-w-2xl text-lg text-zinc-200 sm:text-xl">
-              Creation changed my life.
+              I know because I changed.
               <br />
-              Now I build things and myself with purpose.
+              Not all at once.
+              <br />
+              Not perfectly.
+              <br />
+              But decisively.
             </p>
           </div>
         </div>
@@ -46,19 +55,22 @@ export default function FounderPage() {
           <Card className="p-7 md:p-8">
             <SectionHeading
               eyebrow="Where This Started"
-              title="I didn&apos;t start from confidence."
-              description="I started from a place where I felt small."
+              title="There was a period in my life where I felt small."
+              description="I didn&apos;t see much of a future for myself."
             />
             <div className="mt-6 max-w-2xl space-y-4 text-base text-muted-foreground md:text-lg">
-              <p>Powerless.</p>
-              <p>Lost in my own head.</p>
-              <p>There were seasons in my life where I genuinely couldn&apos;t see a future for myself.</p>
+              <p>I questioned my worth.</p>
+              <p>I lost people who meant everything to me.</p>
+              <p>Nothing about me felt inevitable.</p>
               <p>What shifted everything wasn&apos;t motivation.</p>
-              <p>It was effort.</p>
-              <p>Small, deliberate effort. Training. Practicing. Learning. Finishing things.</p>
-              <p>Not to impress anyone. Just to prove to myself that change was possible.</p>
-              <p>And it was.</p>
-              <p>That discovery shaped who I am.</p>
+              <p>It was one decision.</p>
+              <p>When I said, &quot;I&apos;m too tired,&quot; I did it anyway.</p>
+              <p>When I thought, &quot;I can&apos;t,&quot; I proved myself wrong.</p>
+              <p>I started exercising. Then I kept going. Then other parts of my life followed.</p>
+              <p>That&apos;s when I learned something real:</p>
+              <p className="font-medium text-foreground">
+                Change doesn&apos;t begin with confidence. It begins with action.
+              </p>
             </div>
           </Card>
 
@@ -77,19 +89,24 @@ export default function FounderPage() {
       <section className="container-pad py-16">
         <div className="mx-auto max-w-4xl">
           <SectionHeading
-            eyebrow="What I Believe Now"
+            eyebrow="What I Believe"
             title="I don&apos;t believe people are fixed."
-            description="I believe we expand in proportion to the effort we choose."
+            description="I believe we expand when we engage."
           />
           <div className="mt-6 space-y-4 text-base text-muted-foreground md:text-lg">
-            <p>Not in a dramatic way. Not overnight.</p>
-            <p>But steadily.</p>
-            <p>Life feels different when you participate in it.</p>
-            <p>When you build something. When you take responsibility. When you care about improving.</p>
-            <p>Effort isn&apos;t punishment to me anymore. It&apos;s engagement.</p>
+            <p>Not through intensity.</p>
+            <p>Not through hype.</p>
+            <p>Through deliberate participation.</p>
+            <p>You build something. You finish it. You improve it. You improve yourself alongside it.</p>
+            <p>That process compounds.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="container-pad py-16">
+        <div className="mx-auto max-w-4xl">
           <Card className="mt-8 p-6">
-            <p className="text-sm uppercase tracking-[0.16em] text-cyan-500">I Work Across Different Mediums</p>
+            <p className="text-sm uppercase tracking-[0.16em] text-cyan-500">Why I Build</p>
             <div className="mt-4 space-y-2">
               {mediums.map((medium) => (
                 <p key={medium} className="font-display text-2xl tracking-tight md:text-3xl">
@@ -98,10 +115,14 @@ export default function FounderPage() {
               ))}
             </div>
             <p className="mt-6 text-base text-muted-foreground md:text-lg">
-              They may look unrelated, but the instinct is the same: build something thoughtfully,
-              improve it, improve myself alongside it.
+              On the surface, they look unrelated.
             </p>
-            <p className="mt-3 font-medium">I don&apos;t build for noise. I build for depth.</p>
+            <p className="mt-3 text-base text-muted-foreground md:text-lg">
+              But they all come from the same place: choosing to participate fully in life.
+            </p>
+            <p className="mt-3 text-base text-muted-foreground md:text-lg">
+              Creation is how I test my limits. It&apos;s how I grow. It&apos;s how I stay engaged.
+            </p>
           </Card>
         </div>
       </section>
@@ -110,17 +131,16 @@ export default function FounderPage() {
         <Card className="border-cyan-400/30 bg-gradient-to-br from-cyan-400/10 via-card to-card p-7 md:p-10">
           <SectionHeading
             eyebrow="My Mission"
-            title="I care about people first."
-            description="Especially young people who feel stuck, overlooked, or like they don&apos;t matter."
+            title="There are people, especially young people, who feel stuck."
+            description="I remember that feeling clearly."
           />
           <div className="mt-6 space-y-4 text-base text-muted-foreground md:text-lg">
-            <p>Because I remember that version of myself.</p>
-            <p>If someone in a dark season can look at what I build and think:</p>
-            <p className="font-medium text-foreground">&quot;Maybe I can change too.&quot;</p>
-            <p>That&apos;s enough.</p>
+            <p>If someone in that place can look at what I&apos;ve built and think,</p>
+            <p className="font-medium text-foreground">&quot;Maybe I&apos;m not fixed either,&quot;</p>
+            <p>then this matters.</p>
             <p>I don&apos;t want to preach.</p>
             <p>
-              I want to demonstrate through consistency, effort, and stability that growth is real.
+              I want to demonstrate quietly, consistently that growth is real.
             </p>
           </div>
         </Card>
@@ -144,7 +164,7 @@ export default function FounderPage() {
             <p>The people I&apos;ve lost shaped me.</p>
             <p>The people still here anchor me.</p>
             <p>Creation is my lifeline.</p>
-            <p>Love is the reason.</p>
+            <p>People are the reason.</p>
           </div>
         </div>
       </section>
@@ -154,13 +174,14 @@ export default function FounderPage() {
           <SectionHeading
             eyebrow="Where I&apos;m Headed"
             title="I&apos;m 20."
-            description="I don&apos;t pretend to have decades of leadership behind me."
+            description="I&apos;m early. But I&apos;m building long-term."
           />
           <div className="mt-6 space-y-4 text-base text-muted-foreground md:text-lg">
-            <p>But I&apos;m building toward sustainable creation, long-term leverage, and depth in what matters.</p>
-            <p>Becoming someone others can rely on.</p>
-            <p>Not explosive growth.</p>
-            <p className="font-medium text-foreground">Durable growth.</p>
+            <p>Toward sustainability.</p>
+            <p>Toward leadership.</p>
+            <p>Toward depth in a few things that matter.</p>
+            <p>Not for status.</p>
+            <p>For impact. For responsibility. For proof that change compounds.</p>
           </div>
         </Card>
       </section>
@@ -169,15 +190,15 @@ export default function FounderPage() {
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-500">Closing</p>
           <h2 className="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-5xl md:text-6xl">
-            If you&apos;re in a season where things feel heavy:
+            If you feel stuck:
           </h2>
           <div className="mt-6 space-y-2 text-base text-muted-foreground md:text-lg">
             <p>Start small.</p>
-            <p>Choose something worth caring about.</p>
-            <p>Stick with it.</p>
-            <p>Let effort compound quietly.</p>
-            <p>You are more expandable than you think.</p>
-            <p>And I&apos;m building to prove that every day.</p>
+            <p>Do the thing you think you can&apos;t.</p>
+            <p>Repeat it.</p>
+            <p>Let it build.</p>
+            <p>Change is possible.</p>
+            <p>I&apos;m building as evidence of that.</p>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link href="/work" className={buttonStyles({ size: "lg" })}>
