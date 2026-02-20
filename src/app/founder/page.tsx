@@ -38,13 +38,11 @@ export default function FounderPage() {
               Change is possible.
             </h1>
             <p className="max-w-2xl text-lg text-zinc-200 sm:text-xl">
-              I know because I changed.
-              <br />
               Not all at once.
               <br />
               Not perfectly.
               <br />
-              But decisively.
+              Just decisively.
             </p>
           </div>
         </div>
@@ -53,24 +51,45 @@ export default function FounderPage() {
       <section className="container-pad py-16 md:py-20">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-stretch">
           <Card className="p-7 md:p-8">
-            <SectionHeading
-              eyebrow="Where This Started"
-              title="There was a period in my life where I felt small."
-              description="I didn&apos;t see much of a future for myself."
-            />
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-500">ORIGINS</p>
             <div className="mt-6 max-w-2xl space-y-4 text-base text-muted-foreground md:text-lg">
-              <p>I questioned my worth.</p>
-              <p>I lost people who meant everything to me.</p>
-              <p>Nothing about me felt inevitable.</p>
-              <p>What shifted everything wasn&apos;t motivation.</p>
-              <p>It was one decision.</p>
-              <p>When I said, &quot;I&apos;m too tired,&quot; I did it anyway.</p>
-              <p>When I thought, &quot;I can&apos;t,&quot; I proved myself wrong.</p>
-              <p>I started exercising. Then I kept going. Then other parts of my life followed.</p>
-              <p>That&apos;s when I learned something real:</p>
-              <p className="font-medium text-foreground">
-                Change doesn&apos;t begin with confidence. It begins with action.
-              </p>
+              <p>There was a time I genuinely believed I was worthless.</p>
+              <p>Not in a dramatic way.</p>
+              <p>Just quietly. Constantly.</p>
+
+              <p>I didn&apos;t see a future.</p>
+              <p>I didn&apos;t see strength.</p>
+              <p>I didn&apos;t see much at all.</p>
+
+              <p>I lost people who shaped me.</p>
+              <p>And for a while I just felt small.</p>
+
+              <p>One day I got tired of that feeling.</p>
+
+              <p>Not inspired.</p>
+              <p>Not confident.</p>
+              <p>Just tired.</p>
+
+              <p>So I changed something I could control.</p>
+
+              <p>I started training.</p>
+
+              <p>When I said, &quot;I&apos;m too tired,&quot; I went anyway.</p>
+              <p>When I thought, &quot;I can&apos;t,&quot; I tried anyway.</p>
+
+              <p>No big breakthrough.</p>
+              <p>No speech.</p>
+              <p>No turning point moment.</p>
+
+              <p>Just small decisions that proved I was wrong about myself.</p>
+
+              <p>That&apos;s what changed everything.</p>
+
+              <p>Not motivation.</p>
+              <p>Proof.</p>
+
+              <p>And once you prove to yourself that you can change &mdash;</p>
+              <p>you can&apos;t unlearn that.</p>
             </div>
           </Card>
 

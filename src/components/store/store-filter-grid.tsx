@@ -12,24 +12,44 @@ import { Tabs } from "@/components/ui/tabs";
 import { productFilters, type ProductItem } from "@/content/products";
 import { formatCurrency } from "@/lib/utils";
 
-export function StoreFilterGrid({ items }: { items: ProductItem[] }) {
-  const [filter, setFilter] = useState<(typeof productFilters)[number]>("All");
+type ProductFilter = (typeof productFilters)[number];
+
+type StoreFilterGridProps = {
+  items: ProductItem[];
+  filter?: ProductFilter;
+  onFilterChange?: (next: ProductFilter) => void;
+};
+
+export function StoreFilterGrid({
+  items,
+  filter,
+  onFilterChange,
+}: StoreFilterGridProps) {
+  const [internalFilter, setInternalFilter] = useState<ProductFilter>("All");
+  const activeFilter = filter ?? internalFilter;
   const { addItem, openCart } = useCart();
+
+  const handleFilterChange = (next: ProductFilter) => {
+    onFilterChange?.(next);
+    if (filter === undefined) {
+      setInternalFilter(next);
+    }
+  };
 
   const filtered = useMemo(
     () =>
-      filter === "All"
+      activeFilter === "All"
         ? items
-        : items.filter((item) => item.category === filter),
-    [filter, items],
+        : items.filter((item) => item.category === activeFilter),
+    [activeFilter, items],
   );
 
   return (
     <div className="space-y-6">
       <Tabs
         tabs={productFilters.map((entry) => ({ label: entry, value: entry }))}
-        value={filter}
-        onChange={(next) => setFilter(next as (typeof productFilters)[number])}
+        value={activeFilter}
+        onChange={(next) => handleFilterChange(next as ProductFilter)}
         ariaLabel="Filter products by category"
       />
 

@@ -1,5 +1,5 @@
 import { SectionHeading } from "@/components/shared/section-heading";
-import { StoreFilterGrid } from "@/components/store/store-filter-grid";
+import { StoreShowcase } from "@/components/store/store-showcase";
 import { products } from "@/content/products";
 
 export default function StorePage() {
@@ -10,9 +10,7 @@ export default function StorePage() {
         title="Furniture, Tech Fashion, and Engineered Objects"
         description="Product lines developed by Yuxion teams with the same design and systems thinking used in our digital work."
       />
-      <div className="mt-8">
-        <StoreFilterGrid items={products} />
-      </div>
+      <StoreShowcase items={products} />
     </section>
   );
 }
