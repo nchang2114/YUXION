@@ -256,7 +256,7 @@ export default function HomePage() {
           </div>
           <div className="mt-12">
             <Link href="/work" className={buttonStyles({ variant: "secondary" })}>
-              Explore the Work
+              Explore Our Work
             </Link>
           </div>
         </div>
