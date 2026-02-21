@@ -335,7 +335,7 @@ export default function FounderPage() {
               href="/work"
               className="text-sm tracking-[0.01em] text-muted-foreground transition-colors hover:text-foreground"
             >
-              Explore my Work
+              Explore Our Work
             </Link>
           </div>
         </div>
