@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NewsletterSignup } from "@/components/home/newsletter-signup";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
@@ -154,27 +155,13 @@ export default function HomePage() {
       <section className="container-pad mt-20">
         <SectionHeading
           eyebrow="Philosophy Snapshot"
-          title="A refusal to drift."
-          description="This studio exists for one reason:"
+          title="I like making stuff."
+          description="Like and subscribe haha im done with this"
         />
         <Card className="mt-8 max-w-4xl border-cyan-400/30 bg-card/60 p-6 md:p-8">
-          <div className="space-y-3">
-            <p className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
-              To live deliberately.
-            </p>
-            <p className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
-              Creation is participation - a rejection of passivity.
-            </p>
-            <p className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
-              Commit fully - and something changes.
-            </p>
-          </div>
-          <div className="mt-8 space-y-2 text-lg text-muted-foreground md:text-xl">
-            <p>Not just the work.</p>
-            <p className="font-display text-4xl leading-tight tracking-tight text-foreground md:text-5xl">
-              You.
-            </p>
-          </div>
+          <p className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+            I like making stuff. Like and subscribe haha im done with this
+          </p>
         </Card>
         <div className="mt-6">
           <Link href="/founder" className={buttonStyles({ variant: "secondary" })}>
@@ -242,20 +229,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Closing</p>
           <h2 className="mt-5 font-display text-5xl leading-tight tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            Life doesn&apos;t change by accident.
+            Follow our journey!
           </h2>
-          <div className="mt-8 space-y-2 text-base text-muted-foreground md:text-lg">
-            <p>It changes when something is chosen.</p>
-            <p>When something is built.</p>
-            <p>When you give your heart to something more than yourself.</p>
-            <p className="pt-4 font-display text-3xl tracking-tight text-foreground md:text-4xl">
-              Build deliberately.
-            </p>
-          </div>
-          <div className="mt-12">
-            <Link href="/work" className={buttonStyles({ variant: "secondary" })}>
-              Explore Our Work
-            </Link>
+          <div className="mx-auto mt-10 max-w-3xl text-left">
+            <NewsletterSignup />
           </div>
         </div>
       </section>
