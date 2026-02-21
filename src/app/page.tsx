@@ -73,14 +73,7 @@ const capabilities = [
   },
 ];
 
-const philosophySnapshot = [
-  "We're not here to drift.",
-  "We're here to live deliberately.",
-  "Creation is participation.",
-  "When you commit fully, you change.",
-];
-
-const youtubeUrl = "https://www.youtube.com/@yuxion";
+const youtubeUrl = "https://www.youtube.com/@yuxion-studios";
 
 export default function HomePage() {
   return (
@@ -161,20 +154,28 @@ export default function HomePage() {
       <section className="container-pad mt-20">
         <SectionHeading
           eyebrow="Philosophy Snapshot"
-          title="A refusal to drift"
-          description="The same philosophy from the founder page drives how the studio builds."
+          title="A refusal to drift."
+          description="This studio exists for one reason:"
         />
-        <ul className="mt-8 grid gap-4 md:grid-cols-2">
-          {philosophySnapshot.map((line) => (
-            <li key={line}>
-              <Card className="h-full border-cyan-400/30 p-6">
-                <p className="font-display text-2xl leading-tight tracking-tight text-foreground md:text-3xl">
-                  {line}
-                </p>
-              </Card>
-            </li>
-          ))}
-        </ul>
+        <Card className="mt-8 max-w-4xl border-cyan-400/30 bg-card/60 p-6 md:p-8">
+          <div className="space-y-3">
+            <p className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+              To live deliberately.
+            </p>
+            <p className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+              Creation is participation - a rejection of passivity.
+            </p>
+            <p className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+              Commit fully - and something changes.
+            </p>
+          </div>
+          <div className="mt-8 space-y-2 text-lg text-muted-foreground md:text-xl">
+            <p>Not just the work.</p>
+            <p className="font-display text-4xl leading-tight tracking-tight text-foreground md:text-5xl">
+              You.
+            </p>
+          </div>
+        </Card>
         <div className="mt-6">
           <Link href="/founder" className={buttonStyles({ variant: "secondary" })}>
             Read the Founder Letter
@@ -224,7 +225,7 @@ export default function HomePage() {
             We share build logs, design decisions, and post-mortems in real time so people can see
             what it actually takes to ship.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6">
             <Link
               href={youtubeUrl}
               target="_blank"
@@ -232,9 +233,6 @@ export default function HomePage() {
               className={buttonStyles({ size: "lg" })}
             >
               Watch on YouTube
-            </Link>
-            <Link href="/journal" className={buttonStyles({ variant: "secondary", size: "lg" })}>
-              Read Journal
             </Link>
           </div>
         </div>
