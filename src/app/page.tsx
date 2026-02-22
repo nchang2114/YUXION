@@ -87,11 +87,11 @@ export default function HomePage() {
           <h1 className="font-display text-5xl leading-none tracking-tight sm:text-7xl">
             YUXION STUDIOS
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            A founder-led studio focused on deliberate creation across digital and physical mediums.
-          </p>
           <p className="font-display text-2xl tracking-tight text-foreground sm:text-3xl">
             BUILD. CREATE. INSPIRE.
+          </p>
+          <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
+            A founder-led studio focused on deliberate creation across digital and physical mediums.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/work" className={buttonStyles({ size: "lg" })}>
